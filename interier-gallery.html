@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Галерея интерьера — JAM Массажный салон</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: #0d0d0f;
+            color: #f5f5f7;
+            line-height: 1.6;
+        }
+
+        .header {
+            background: linear-gradient(135deg, rgba(194, 24, 91, 0.2), rgba(255, 42, 109, 0.1));
+            padding: 60px 0;
+            text-align: center;
+            border-bottom: 2px solid #ff2a6d;
+        }
+
+        .header h1 {
+            font-size: 48px;
+            font-weight: bold;
+            color: #ff2a6d;
+            margin-bottom: 20px;
+        }
+
+        .header p {
+            font-size: 18px;
+            color: #d4af37;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .back-btn {
+            background: linear-gradient(45deg, #ff2a6d, #c2185b);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin: 30px 0;
+            transition: all 0.3s;
+        }
+
+        .back-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 42, 109, 0.4);
+            color: white;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 40px 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            color: white;
+            padding: 20px;
+            border-radius: 0 0 15px 15px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .fullscreen-modal .modal-dialog {
+            max-width: 90vw;
+            max-height: 90vh;
+        }
+
+        .fullscreen-modal .modal-content {
+            background: rgba(0, 0, 0, 0.9);
+            border: none;
+        }
+
+        .fullscreen-modal .modal-body {
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .fullscreen-modal img {
+            max-width: 100%;
+            max-height: 80vh;
+            object-fit: contain;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="container">
+            <a href="/" class="back-btn">
+                <i class="fas fa-arrow-left"></i> Назад к главной
+            </a>
+            <h1>Галерея интерьера</h1>
+            <p>Погрузитесь в атмосферу нашего салона. Каждая деталь создана для вашего максимального комфорта и расслабления.</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="gallery-grid">
+            <div class="gallery-item" onclick="openFullscreen('/images/mod/interier/interior1.jpg')">
+                <img src="/images/mod/interier/interior1.jpg" alt="Массажный кабинет 1">
+                <div class="gallery-overlay">
+                    <h5>Массажный кабинет</h5>
+                    <p>Уютная атмосфера для полного расслабления</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" onclick="openFullscreen('/images/mod/interier/interior2.jpg')">
+                <img src="/images/mod/interier/interior2.jpg" alt="Зона отдыха">
+                <div class="gallery-overlay">
+                    <h5>Зона отдыха</h5>
+                    <p>Комфортное пространство для релаксации</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" onclick="openFullscreen('/images/mod/interier/interior3.jpg')">
+                <img src="/images/mod/interier/interior3.jpg" alt="Приватная комната">
+                <div class="gallery-overlay">
+                    <h5>Приватная комната</h5>
+                    <p>Интимная обстановка для особых процедур</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" onclick="openFullscreen('/images/mod/interier/interior4.jpg')">
+                <img src="/images/mod/interier/interior4.jpg" alt="Ванная комната">
+                <div class="gallery-overlay">
+                    <h5>Ванная комната</h5>
+                    <p>Роскошные условия для водных процедур</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" onclick="openFullscreen('/images/mod/interier/interior5.jpg')">
+                <img src="/images/mod/interier/interior5.jpg" alt="Холл">
+                <div class="gallery-overlay">
+                    <h5>Холл</h5>
+                    <p>Элегантная встречная зона</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" onclick="openFullscreen('/images/mod/interier/interior6.jpg')">
+                <img src="/images/mod/interier/interior6.jpg" alt="VIP комната">
+                <div class="gallery-overlay">
+                    <h5>VIP комната</h5>
+                    <p>Премиальные условия для особых клиентов</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" onclick="openFullscreen('/images/mod/interier/interior7.jpg')">
+                <img src="/images/mod/interier/interior7.jpg" alt="Душевая">
+                <div class="gallery-overlay">
+                    <h5>Душевая</h5>
+                    <p>Современные удобства для гигиены</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" onclick="openFullscreen('/images/mod/interier/interior8.jpg')">
+                <img src="/images/mod/interier/interior8.jpg" alt="Комната для двоих">
+                <div class="gallery-overlay">
+                    <h5>Комната для двоих</h5>
+                    <p>Просторное помещение для парных процедур</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно для полноэкранного просмотра -->
+    <div class="modal fade fullscreen-modal" id="fullscreenModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <img id="fullscreenImage" src="" alt="Полноэкранное изображение">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        function openFullscreen(imageSrc) {
+            document.getElementById('fullscreenImage').src = imageSrc;
+            new bootstrap.Modal(document.getElementById('fullscreenModal')).show();
+        }
+    </script>
+</body>
+
+</html>
