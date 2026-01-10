@@ -78,6 +78,26 @@
     margin-bottom: 50px;
 }
 
+.masters-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.masters-grid {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.master-item {
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+}
+
 .master-card {
     background: rgba(0, 0, 0, 0.5);
     border-radius: 20px;

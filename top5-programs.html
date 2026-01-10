@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ТОП 5 ПРОГРАММ - JAM</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+            color: #ffffff;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .top5-section {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .top5-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .top5-title {
+            font-size: 72px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            background: linear-gradient(90deg, #ffffff, #ff2a6d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: glow 2s ease-in-out infinite;
+        }
+
+        .top5-subtitle {
+            font-size: 48px;
+            font-weight: bold;
+            color: #ff2a6d;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        @keyframes glow {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+
+        .programs-container {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .program-card {
+            background: linear-gradient(135deg, rgba(194, 24, 91, 0.2), rgba(255, 42, 109, 0.1));
+            border: 3px solid rgba(255, 42, 109, 0.4);
+            border-radius: 25px;
+            padding: 40px;
+            display: flex;
+            gap: 40px;
+            align-items: center;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .program-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 8px;
+            height: 100%;
+            background: linear-gradient(180deg, #ff2a6d, #d4af37);
+        }
+
+        .program-card:hover {
+            transform: translateX(10px);
+            box-shadow: 0 20px 60px rgba(255, 42, 109, 0.4);
+            border-color: #ff2a6d;
+        }
+
+        .program-number {
+            font-size: 120px;
+            font-weight: bold;
+            color: rgba(255, 42, 109, 0.3);
+            line-height: 1;
+            min-width: 150px;
+            text-align: center;
+            transition: all 0.4s ease;
+        }
+
+        .program-card:hover .program-number {
+            color: #ff2a6d;
+            transform: scale(1.1);
+        }
+
+        .program-content {
+            flex: 1;
+        }
+
+        .program-title {
+            font-size: 42px;
+            color: #ff2a6d;
+            margin-bottom: 15px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .program-subtitle {
+            font-size: 22px;
+            color: #d4af37;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .program-description {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        .program-meta {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+            padding-top: 20px;
+            border-top: 2px solid rgba(255, 42, 109, 0.3);
+        }
+
+        .program-duration {
+            font-size: 16px;
+            color: #d4af37;
+            font-weight: 600;
+        }
+
+        .program-duration span {
+            font-size: 24px;
+            display: block;
+            margin-top: 5px;
+        }
+
+        .program-price {
+            font-size: 18px;
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        .program-price span {
+            font-size: 42px;
+            color: #ff2a6d;
+            font-weight: bold;
+            display: block;
+            margin-top: 5px;
+        }
+
+        /* Адаптивность */
+        @media (max-width: 1024px) {
+            .top5-title {
+                font-size: 56px;
+            }
+
+            .top5-subtitle {
+                font-size: 36px;
+            }
+
+            .program-number {
+                font-size: 90px;
+                min-width: 120px;
+            }
+
+            .program-title {
+                font-size: 32px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 20px 10px;
+            }
+
+            .top5-header {
+                margin-bottom: 40px;
+            }
+
+            .top5-title {
+                font-size: 42px;
+            }
+
+            .top5-subtitle {
+                font-size: 28px;
+            }
+
+            .program-card {
+                flex-direction: column;
+                padding: 30px 20px;
+                gap: 20px;
+            }
+
+            .program-number {
+                font-size: 72px;
+                min-width: auto;
+            }
+
+            .program-title {
+                font-size: 26px;
+            }
+
+            .program-subtitle {
+                font-size: 18px;
+            }
+
+            .program-description {
+                font-size: 14px;
+            }
+
+            .program-meta {
+                flex-direction: column;
+                gap: 20px;
+                align-items: flex-start;
+            }
+
+            .program-price span {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="top5-section">
+        <div class="top5-header">
+            <div class="top5-title">ТОП 5</div>
+            <div class="top5-subtitle">ПРОГРАММ</div>
+        </div>
+
+        <div class="programs-container">
+            <!-- Программа 1 -->
+            <div class="program-card">
+                <div class="program-number">01</div>
+                <div class="program-content">
+                    <h3 class="program-title">Classic</h3>
+                    <p class="program-subtitle">Классический массаж</p>
+                    <p class="program-description">
+                        Максимум наслаждения и восстановления сил за один сеанс! Это идеальный выбор для тех, 
+                        кто хочет полностью отключиться от повседневных забот. Классический массаж — это проверенная 
+                        временем техника, которая сочетает в себе традиционные методы релаксации и восстановления.
+                    </p>
+                    <div class="program-meta">
+                        <div class="program-duration">
+                            Длительность
+                            <span>60 минут</span>
+                        </div>
+                        <div class="program-price">
+                            Стоимость
+                            <span>7000 ₽</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Программа 2 -->
+            <div class="program-card">
+                <div class="program-number">02</div>
+                <div class="program-content">
+                    <h3 class="program-title">VIP</h3>
+                    <p class="program-subtitle">VIP-программа</p>
+                    <p class="program-description">
+                        Абсолютный релакс и пик удовольствия для настоящих ценителей. VIP-программа создана для тех, 
+                        кто ценит эксклюзивность. Это эксклюзивный сервис премиум-класса с индивидуальным подходом, 
+                        использованием элитных масел и косметики.
+                    </p>
+                    <div class="program-meta">
+                        <div class="program-duration">
+                            Длительность
+                            <span>90 минут</span>
+                        </div>
+                        <div class="program-price">
+                            Стоимость
+                            <span>12000 ₽</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Программа 3 -->
+            <div class="program-card">
+                <div class="program-number">03</div>
+                <div class="program-content">
+                    <h3 class="program-title">Silver</h3>
+                    <p class="program-subtitle">Программа Silver</p>
+                    <p class="program-description">
+                        Двойная ласка, удвоенное наслаждение — от кончиков пальцев до полного блаженства! 
+                        Идеальный баланс между роскошью и доступностью. Уникальный опыт с участием двух мастериц 
+                        одновременно создаёт атмосферу полного погружения в мир релакса.
+                    </p>
+                    <div class="program-meta">
+                        <div class="program-duration">
+                            Длительность
+                            <span>75 минут</span>
+                        </div>
+                        <div class="program-price">
+                            Стоимость
+                            <span>9000 ₽</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Программа 4 -->
+            <div class="program-card">
+                <div class="program-number">04</div>
+                <div class="program-content">
+                    <h3 class="program-title">Express</h3>
+                    <p class="program-subtitle">Экспресс-программа</p>
+                    <p class="program-description">
+                        Горячие масла, дразнящие прикосновения и стремительное расслабление. Идеально, когда время 
+                        ограничено, а желание на пределе. Концентрированная программа включает самые эффективные 
+                        техники релаксации и восстановления энергии.
+                    </p>
+                    <div class="program-meta">
+                        <div class="program-duration">
+                            Длительность
+                            <span>45 минут</span>
+                        </div>
+                        <div class="program-price">
+                            Стоимость
+                            <span>5000 ₽</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Программа 5 -->
+            <div class="program-card">
+                <div class="program-number">05</div>
+                <div class="program-content">
+                    <h3 class="program-title">Общение</h3>
+                    <p class="program-subtitle">Программа общения</p>
+                    <p class="program-description">
+                        Максимум внимания, искренней близости и глубокого удовольствия. Красивая, умная и невероятно 
+                        нежная мастерица. Это не просто массаж, это возможность провести время в приятной компании 
+                        и создать атмосферу комфорта и доверия.
+                    </p>
+                    <div class="program-meta">
+                        <div class="program-duration">
+                            Длительность
+                            <span>60 минут</span>
+                        </div>
+                        <div class="program-price">
+                            Стоимость
+                            <span>5000 ₽</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
