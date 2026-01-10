@@ -2,6 +2,7 @@ import { useState } from 'react'
 
 const Services = () => {
   const [activeIndex, setActiveIndex] = useState(0)
+  const [imageError, setImageError] = useState({})
 
   const services = [
     {
@@ -17,7 +18,7 @@ const Services = () => {
       title: "VIP",
       subtitle: "VIP-программа",
       description: "Абсолютный релакс и пик удовольствия для настоящих ценителей. VIP-программа создана для тех, кто ценит эксклюзивность.",
-      fullDescription: "VIP-программа — это эксклюзивный сервис премиум-класса. Включает в себя индивидуальный подход, использование элитных масел и косметики, а также дополнительные услуги для максимального комфорта. Идеально для тех, кто привык к лучшему.",
+      fullDescription: "VIP-программа — это эксклюзивный сервис премиум-класса. Включает в себе индивидуальный подход, использование элитных масел и косметики, а также дополнительные услуги для максимального комфорта. Идеально для тех, кто привык к лучшему.",
       price: "12000 ₽",
       duration: "90 минут",
       image: "/images/mod/services/VIP.png"
@@ -59,6 +60,12 @@ const Services = () => {
     setActiveIndex((prev) => (prev === services.length - 1 ? 0 : prev + 1))
   }
 
+  const handleImageError = (index) => {
+    console.error(`Failed to load image for service: ${services[index].title}`)
+    console.error(`Image path: ${services[index].image}`)
+    setImageError(prev => ({ ...prev, [index]: true }))
+  }
+
   return (
     <section id="services" className="services-section">
       <h2 className="services-title">ТОП 5 ПРОГРАММ</h2>
@@ -89,7 +96,28 @@ const Services = () => {
         <div className="services-card-container">
           <div className="service-card-wrapper">
             <div className="service-card-image">
-              <img src={services[activeIndex].image} alt={services[activeIndex].title} />
+              {imageError[activeIndex] ? (
+                <div style={{ 
+                  width: '100%', 
+                  height: '100%', 
+                  display: 'flex', 
+                  alignItems: 'center', 
+                  justifyContent: 'center',
+                  background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+                  color: 'white',
+                  fontSize: '24px',
+                  fontWeight: 'bold'
+                }}>
+                  {services[activeIndex].title}
+                </div>
+              ) : (
+                <img 
+                  src={services[activeIndex].image} 
+                  alt={services[activeIndex].title}
+                  onError={() => handleImageError(activeIndex)}
+                  onLoad={() => console.log(`Image loaded: ${services[activeIndex].image}`)}
+                />
+              )}
             </div>
             <div className="service-card-content">
               <h3 className="service-card-title">{services[activeIndex].title}</h3>

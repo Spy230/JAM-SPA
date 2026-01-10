@@ -2,6 +2,7 @@ import { useState } from 'react'
 
 const Top5Programs = () => {
   const [activeIndex, setActiveIndex] = useState(0)
+  const [imageError, setImageError] = useState({})
 
   const programs = [
     {
@@ -59,10 +60,16 @@ const Top5Programs = () => {
     setActiveIndex((prev) => (prev === programs.length - 1 ? 0 : prev + 1))
   }
 
+  const handleImageError = (index) => {
+    console.error(`Failed to load image for program: ${programs[index].title}`)
+    console.error(`Image path: ${programs[index].image}`)
+    setImageError(prev => ({ ...prev, [index]: true }))
+  }
+
   return (
     <section id="top5programs" className="services-section">
       <h2 className="services-title">ТОП 5 ПРОГРАММ</h2>
-      
+
       <div className="services-container">
         {/* Левая часть - Список программ */}
         <div className="services-list">
@@ -89,7 +96,28 @@ const Top5Programs = () => {
         <div className="services-card-container">
           <div className="service-card-wrapper">
             <div className="service-card-image">
-              <img src={programs[activeIndex].image} alt={programs[activeIndex].title} />
+              {imageError[activeIndex] ? (
+                <div style={{ 
+                  width: '100%', 
+                  height: '100%', 
+                  display: 'flex', 
+                  alignItems: 'center', 
+                  justifyContent: 'center',
+                  background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+                  color: 'white',
+                  fontSize: '24px',
+                  fontWeight: 'bold'
+                }}>
+                  {programs[activeIndex].title}
+                </div>
+              ) : (
+                <img 
+                  src={programs[activeIndex].image} 
+                  alt={programs[activeIndex].title}
+                  onError={() => handleImageError(activeIndex)}
+                  onLoad={() => console.log(`Image loaded: ${programs[activeIndex].image}`)}
+                />
+              )}
             </div>
             <div className="service-card-content">
               <h3 className="service-card-title">{programs[activeIndex].title}</h3>
@@ -102,7 +130,7 @@ const Top5Programs = () => {
           <div className="service-navigation">
             <button className="nav-btn nav-up" onClick={handlePrev}>
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path d="M18 15L12 9L6 15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M18 15L12 9L6 15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </button>
             <div className="nav-indicator">
@@ -110,7 +138,7 @@ const Top5Programs = () => {
             </div>
             <button className="nav-btn nav-down" onClick={handleNext}>
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path d="M6 9L12 15L18 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M6 9L12 15L18 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </button>
           </div>
