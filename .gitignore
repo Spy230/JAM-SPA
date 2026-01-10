@@ -28,3 +28,6 @@ dist-ssr
 custom-scripts.js
 custom-styles.css
 section-backgrounds.css
+
+# Old images folder (moved to public)
+/images
