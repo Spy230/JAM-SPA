@@ -68,13 +68,13 @@ const Masters = () => {
                   <div style={{ display: 'flex', justifyContent: 'center', gap: '10px', marginTop: '15px' }}>
                     <button
                       onClick={() => setAlinaIndex((prev) => (prev - 1 + alinaImages.length) % alinaImages.length)}
-                      style={{ background: '#ff2a6d', color: 'white', border: 'none', padding: '10px 20px', borderRadius: '20px', cursor: 'pointer' }}
+                      className="master-nav-btn"
                     >
                       ←
                     </button>
                     <button
                       onClick={() => setAlinaIndex((prev) => (prev + 1) % alinaImages.length)}
-                      style={{ background: '#ff2a6d', color: 'white', border: 'none', padding: '10px 20px', borderRadius: '20px', cursor: 'pointer' }}
+                      className="master-nav-btn"
                     >
                       →
                     </button>
@@ -97,13 +97,13 @@ const Masters = () => {
                   <div style={{ display: 'flex', justifyContent: 'center', gap: '10px', marginTop: '15px' }}>
                     <button
                       onClick={() => setKamilaIndex((prev) => (prev - 1 + kamilaImages.length) % kamilaImages.length)}
-                      style={{ background: '#ff2a6d', color: 'white', border: 'none', padding: '10px 20px', borderRadius: '20px', cursor: 'pointer' }}
+                      className="master-nav-btn"
                     >
                       ←
                     </button>
                     <button
                       onClick={() => setKamilaIndex((prev) => (prev + 1) % kamilaImages.length)}
-                      style={{ background: '#ff2a6d', color: 'white', border: 'none', padding: '10px 20px', borderRadius: '20px', cursor: 'pointer' }}
+                      className="master-nav-btn"
                     >
                       →
                     </button>

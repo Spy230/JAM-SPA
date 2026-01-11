@@ -57,7 +57,7 @@ const Interior = () => {
   return (
     <>
       <section id="interior">
-        <h2 style={{ fontSize: '48px', fontWeight: 'bold', textAlign: 'center', color: '#ff2a6d', marginBottom: '30px' }}>
+        <h2 style={{ fontSize: '48px', fontWeight: 'bold', textAlign: 'center', color: '#00D4FF', marginBottom: '30px' }}>
           Наш Интерьер
         </h2>
         <p className="interior-intro">

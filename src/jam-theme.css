@@ -1,0 +1,101 @@
+/* JAM Theme - Cyberpunk Neon Style */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@400;600;700&display=swap');
+
+:root {
+  --primary-bg: #000000;
+  --secondary-bg: #1A1A1A;
+  --tertiary-bg: #121212;
+  --text-primary: #E0E0E0;
+  --text-secondary: #CCCCCC;
+  --accent-cyan: #00D4FF;
+  --accent-cyan-bright: #00BFFF;
+  --accent-cyan-dark: #0099CC;
+}
+
+/* Глобальные стили */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: 
+    linear-gradient(135deg, rgba(0, 0, 0, 0.95), rgba(26, 26, 26, 0.9)),
+    url('/static/DSC04113.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  color: var(--text-primary);
+  min-height: 100vh;
+}
+
+/* Неоновое свечение */
+.neon-glow {
+  text-shadow: 
+    0 0 10px var(--accent-cyan),
+    0 0 20px var(--accent-cyan),
+    0 0 30px var(--accent-cyan),
+    0 0 40px var(--accent-cyan-bright);
+}
+
+.neon-glow-subtle {
+  text-shadow: 
+    0 0 5px var(--accent-cyan),
+    0 0 10px var(--accent-cyan);
+}
+
+@keyframes neonPulse {
+  0%, 100% {
+    text-shadow: 
+      0 0 10px var(--accent-cyan),
+      0 0 20px var(--accent-cyan),
+      0 0 30px var(--accent-cyan);
+  }
+  50% {
+    text-shadow: 
+      0 0 15px var(--accent-cyan),
+      0 0 25px var(--accent-cyan),
+      0 0 35px var(--accent-cyan),
+      0 0 45px var(--accent-cyan-bright);
+  }
+}
+
+/* Header */
+header {
+  background-color: rgba(0, 0, 0, 0.9);
+  border-bottom: 2px solid var(--accent-cyan);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.logo-section {
+  text-align: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(0, 212, 255, 0.3);
+}
+
+.logo-section h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 56px;
+  font-weight: 900;
+  color: var(--accent-cyan);
+  margin-bottom: 5px;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+  animation: neonPulse 2s ease-in-out infinite;
+}

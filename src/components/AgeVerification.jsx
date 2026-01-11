@@ -18,27 +18,27 @@ const AgeVerification = ({ onVerify }) => {
       backdropFilter: 'blur(10px)'
     }}>
       <div style={{
-        background: 'linear-gradient(135deg, rgba(194, 24, 91, 0.2), rgba(255, 42, 109, 0.1))',
+        background: 'linear-gradient(135deg, rgba(196, 165, 116, 0.2), rgba(196, 165, 116, 0.1))',
         borderRadius: '30px',
         padding: '60px 40px',
         maxWidth: '500px',
         textAlign: 'center',
-        border: '3px solid rgba(255, 42, 109, 0.5)',
-        boxShadow: '0 20px 60px rgba(255, 42, 109, 0.4)'
+        border: '3px solid rgba(196, 165, 116, 0.5)',
+        boxShadow: '0 20px 60px rgba(196, 165, 116, 0.4)'
       }}>
         <div style={{ fontSize: '80px', marginBottom: '20px' }}>🔞</div>
-        <h2 style={{ fontSize: '32px', fontWeight: 'bold', color: '#ff2a6d', marginBottom: '20px' }}>
+        <h2 style={{ fontSize: '32px', fontWeight: 'bold', color: '#C4A574', marginBottom: '20px' }}>
           Подтверждение возраста
         </h2>
         <p style={{ fontSize: '18px', color: '#ffffff', marginBottom: '20px', lineHeight: '1.6' }}>
           Для посещения сайта необходимо подтвердить, что вам исполнилось 18 лет
         </p>
         <div style={{
-          background: 'rgba(255, 42, 109, 0.2)',
+          background: 'rgba(196, 165, 116, 0.2)',
           borderRadius: '15px',
           padding: '15px',
           marginBottom: '30px',
-          border: '1px solid rgba(255, 42, 109, 0.3)'
+          border: '1px solid rgba(196, 165, 116, 0.3)'
         }}>
           <p style={{ fontSize: '14px', color: '#d4af37', margin: 0 }}>
             ⚠️ Контент сайта предназначен только для совершеннолетних
@@ -48,7 +48,7 @@ const AgeVerification = ({ onVerify }) => {
           <button
             onClick={onVerify}
             style={{
-              background: 'linear-gradient(45deg, #ff2a6d, #c2185b)',
+              background: 'linear-gradient(45deg, #C4A574, #C4A574)',
               color: 'white',
               border: 'none',
               padding: '15px 40px',
@@ -57,15 +57,15 @@ const AgeVerification = ({ onVerify }) => {
               fontWeight: 'bold',
               cursor: 'pointer',
               transition: 'all 0.3s',
-              boxShadow: '0 5px 20px rgba(255, 42, 109, 0.4)'
+              boxShadow: '0 5px 20px rgba(196, 165, 116, 0.4)'
             }}
             onMouseEnter={(e) => {
               e.target.style.transform = 'translateY(-3px)'
-              e.target.style.boxShadow = '0 10px 30px rgba(255, 42, 109, 0.6)'
+              e.target.style.boxShadow = '0 10px 30px rgba(196, 165, 116, 0.6)'
             }}
             onMouseLeave={(e) => {
               e.target.style.transform = 'translateY(0)'
-              e.target.style.boxShadow = '0 5px 20px rgba(255, 42, 109, 0.4)'
+              e.target.style.boxShadow = '0 5px 20px rgba(196, 165, 116, 0.4)'
             }}
           >
             Мне есть 18
@@ -84,8 +84,8 @@ const AgeVerification = ({ onVerify }) => {
               transition: 'all 0.3s'
             }}
             onMouseEnter={(e) => {
-              e.target.style.borderColor = '#ff2a6d'
-              e.target.style.color = '#ff2a6d'
+              e.target.style.borderColor = '#C4A574'
+              e.target.style.color = '#C4A574'
             }}
             onMouseLeave={(e) => {
               e.target.style.borderColor = 'rgba(255, 255, 255, 0.3)'
