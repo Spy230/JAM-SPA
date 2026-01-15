@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест изображений услуг</title>
+    <style>
+        body {
+            background: #0d0d0f;
+            color: white;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        .test-image {
+            margin: 20px 0;
+            border: 2px solid #ff2a6d;
+            padding: 10px;
+        }
+
+        img {
+            max-width: 400px;
+            height: auto;
+            display: block;
+            margin: 10px 0;
+        }
+
+        h2 {
+            color: #ff2a6d;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Тест изображений услуг</h1>
+
+    <div class="test-image">
+        <h2>CLASSIC</h2>
+        <img src="images/mod/services/CLASSIC.png" alt="Classic"
+            onerror="this.style.border='3px solid red'; this.alt='ОШИБКА ЗАГРУЗКИ'">
+    </div>
+
+    <div class="test-image">
+        <h2>VIP</h2>
+        <img src="images/mod/services/VIP.png" alt="VIP"
+            onerror="this.style.border='3px solid red'; this.alt='ОШИБКА ЗАГРУЗКИ'">
+    </div>
+
+    <div class="test-image">
+        <h2>SILVER</h2>
+        <img src="images/mod/services/SILVER.png" alt="Silver"
+            onerror="this.style.border='3px solid red'; this.alt='ОШИБКА ЗАГРУЗКИ'">
+    </div>
+
+    <div class="test-image">
+        <h2>EXPRESS</h2>
+        <img src="images/mod/services/EXPRESS.png" alt="Express"
+            onerror="this.style.border='3px solid red'; this.alt='ОШИБКА ЗАГРУЗКИ'">
+    </div>
+
+    <div class="test-image">
+        <h2>ОБЩЕНИЕ</h2>
+        <img src="images/mod/services/ОБЩЕНИЕ.png" alt="Общение"
+            onerror="this.style.border='3px solid red'; this.alt='ОШИБКА ЗАГРУЗКИ'">
+    </div>
+
+    <script>
+        console.log('Тестовая страница загружена');
+        document.querySelectorAll('img').forEach((img, index) => {
+            img.onload = function () {
+                console.log(`Изображение ${index + 1} загружено успешно:`, this.src);
+            };
+            img.onerror = function () {
+                console.error(`ОШИБКА загрузки изображения ${index + 1}:`, this.src);
+            };
+        });
+    </script>
+</body>
+
+</html>

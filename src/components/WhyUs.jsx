@@ -1,58 +1,58 @@
 const WhyUs = () => {
   const reasons = [
     {
-      icon: "⭐",
-      title: "Профессионализм",
-      text: "Опытные мастерицы с многолетним стажем"
+      icon: "🔥",
+      title: "Чувственность",
+      text: "Наши мастерицы знают все секреты женского тела и умеют дарить незабываемые ощущения"
     },
     {
-      icon: "🏆",
-      title: "Качество",
-      text: "Используем только премиальные масла и косметику"
+      icon: "💋",
+      title: "Интимность",
+      text: "Создаем атмосферу страсти и желания, где каждое прикосновение - это искусство соблазна"
     },
     {
       icon: "🔒",
       title: "Конфиденциальность",
-      text: "Полная анонимность и безопасность"
+      text: "Полная конфиденциальность ваших фантазий и желаний"
     },
     {
       icon: "💎",
-      title: "Комфорт",
-      text: "Роскошный интерьер и атмосфера релакса"
+      title: "Эксклюзив",
+      text: "Индивидуальный подход к каждому клиенту и исполнение самых смелых желаний"
+    },
+    {
+      icon: "🌹",
+      title: "Красота",
+      text: "Только самые красивые и обаятельные девушки с безупречными формами"
+    },
+    {
+      icon: "⚡",
+      title: "Страсть",
+      text: "Горячие объятия, нежные поцелуи и взрывные эмоции в каждом сеансе"
+    },
+    {
+      icon: "🍷",
+      title: "Роскошь",
+      text: "Элитные масла, шампанское и изысканная обстановка для истинных ценителей"
+    },
+    {
+      icon: "🎭",
+      title: "Фантазии",
+      text: "Воплощаем ваши самые сокровенные мечты и тайные желания без границ"
     }
   ]
 
   return (
-    <section id="why-us" style={{ margin: '80px 0', padding: '60px 20px' }}>
-      <h2 style={{ fontSize: '48px', fontWeight: 'bold', textAlign: 'center', color: '#00D4FF', marginBottom: '50px' }}>
+    <section id="why-us" className="why-us-section">
+      <h2 className="why-us-title">
         Почему Выбирают Нас
       </h2>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '30px', maxWidth: '1200px', margin: '0 auto' }}>
+      <div className="why-us-grid">
         {reasons.map((reason, index) => (
-          <div
-            key={index}
-            style={{
-              background: 'rgba(0, 0, 0, 0.5)',
-              borderRadius: '20px',
-              padding: '40px',
-              textAlign: 'center',
-              border: '2px solid rgba(0, 212, 255, 0.3)',
-              transition: 'all 0.3s'
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = 'translateY(-10px)'
-              e.currentTarget.style.boxShadow = '0 15px 40px rgba(0, 212, 255, 0.4)'
-              e.currentTarget.style.borderColor = '#00D4FF'
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = 'translateY(0)'
-              e.currentTarget.style.boxShadow = 'none'
-              e.currentTarget.style.borderColor = 'rgba(0, 212, 255, 0.3)'
-            }}
-          >
-            <div style={{ fontSize: '60px', marginBottom: '20px' }}>{reason.icon}</div>
-            <h4 style={{ fontSize: '24px', color: '#00D4FF', marginBottom: '15px' }}>{reason.title}</h4>
-            <p style={{ fontSize: '16px', color: '#CCCCCC', lineHeight: '1.6' }}>{reason.text}</p>
+          <div key={index} className="why-us-card">
+            <div className="why-us-icon">{reason.icon}</div>
+            <h4 className="why-us-card-title">{reason.title}</h4>
+            <p className="why-us-card-text">{reason.text}</p>
           </div>
         ))}
       </div>

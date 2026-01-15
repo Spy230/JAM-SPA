@@ -25,9 +25,20 @@ const Footer = () => {
           <div style={{ background: 'rgba(0, 0, 0, 0.3)', padding: '30px', borderRadius: '15px', border: '2px solid rgba(255, 255, 255, 0.2)' }}>
             <h3 style={{ fontSize: '24px', color: '#ffffff', marginBottom: '20px' }}>Контакты</h3>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '15px', fontSize: '16px', color: '#ffffff' }}>
-              <p>Телефон: <a href="tel:+79999999999" style={{ color: '#ffffff', textDecoration: 'none' }}>+7 (999) 999-99-99</a></p>
-              <p>Адрес: Москва, ул. Примерная, д. 1</p>
-              <p>Режим работы: Ежедневно 10:00 - 23:00</p>
+              <p>Телефон: <a href="tel:+79123172457" style={{ color: '#ffffff', textDecoration: 'none' }}>+7 (912) 317-24-57</a></p>
+              <p>Адрес: Центральный федеральный округ, Москва, Новомосковский административный округ, район Коммунарка, Скандинавский бульвар, 5, корп. 3</p>
+              <p>Режим работы: Круглосуточно</p>
+              <div style={{ marginTop: '20px' }}>
+                <h4 style={{ fontSize: '18px', color: '#ffffff', marginBottom: '15px' }}>💳 Способы оплаты</h4>
+                <p style={{ fontSize: '14px', color: '#00BFFF', marginBottom: '10px' }}>Принимаем все виды оплаты:</p>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', alignItems: 'center' }}>
+                  <span style={{ fontSize: '12px', background: 'rgba(0, 212, 255, 0.2)', padding: '5px 10px', borderRadius: '15px', color: '#ffffff' }}>Карты</span>
+                  <span style={{ fontSize: '12px', background: 'rgba(0, 212, 255, 0.2)', padding: '5px 10px', borderRadius: '15px', color: '#ffffff' }}>Наличные</span>
+                  <span style={{ fontSize: '12px', background: 'rgba(0, 212, 255, 0.2)', padding: '5px 10px', borderRadius: '15px', color: '#ffffff', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    Переводы
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
