@@ -1,5 +1,84 @@
 /* JAM Theme - Cyberpunk Neon Style */
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+
+/* Font Classes */
+.dancing-script-regular {
+  font-family: "Dancing Script", cursive;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.dancing-script-bold {
+  font-family: "Dancing Script", cursive;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.pacifico-regular {
+  font-family: "Pacifico", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.caveat-regular {
+  font-family: "Caveat", cursive;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.caveat-bold {
+  font-family: "Caveat", cursive;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.lobster-two-regular {
+  font-family: "Lobster Two", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.lobster-two-bold {
+  font-family: "Lobster Two", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.lobster-two-regular-italic {
+  font-family: "Lobster Two", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.lobster-two-bold-italic {
+  font-family: "Lobster Two", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.schibsted-grotesk-regular {
+  font-family: "Schibsted Grotesk", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.schibsted-grotesk-bold {
+  font-family: "Schibsted Grotesk", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.schibsted-grotesk-black {
+  font-family: "Schibsted Grotesk", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+}
 
 :root {
   --primary-bg: #000000;
@@ -53,7 +132,45 @@ body {
 
 * {
   box-sizing: border-box;
-  font-family: "Dancing Script", cursive;
+  font-family: "Dancing Script", cursive !important;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+/* Применяем Schibsted Grotesk к основному контенту */
+.nav-item,
+.service-item-description,
+.service-meta,
+.service-duration,
+.service-price,
+.service-card-subtitle,
+.service-card-description,
+.about-text,
+.about-content p,
+.why-us-card-text,
+.interior-intro,
+.view-gallery-btn,
+.taxi-btn,
+#contacts h4,
+#contacts p,
+#contacts a,
+footer,
+footer *,
+footer p,
+footer h3,
+footer h4,
+footer li,
+footer a,
+footer span,
+footer div,
+.review-text,
+.review-info h5,
+.master-card p,
+.service-card .service-subtitle,
+.service-card .service-description,
+.service-card .service-price {
+  font-family: "Schibsted Grotesk", sans-serif !important;
+  font-optical-sizing: auto;
 }
 
 /* Header */
@@ -120,6 +237,7 @@ header {
   cursor: pointer;
   transition: all 0.3s;
   border: 1px solid transparent;
+  font-family: "Schibsted Grotesk", sans-serif !important;
 }
 
 .nav-item:hover {
@@ -271,16 +389,22 @@ footer {
 }
 
 .promo-banner h3 {
+  font-family: "Schibsted Grotesk", sans-serif !important;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
   font-size: 36px;
-  font-weight: bold;
   color: #ffffff;
   margin-bottom: 15px;
 }
 
 .promo-banner p {
+  font-family: "Schibsted Grotesk", sans-serif !important;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
   font-size: 20px;
   color: #ffffff;
-  font-weight: 600;
 }
 
 /* Раздел Наши Мастера */
@@ -905,6 +1029,8 @@ footer {
   }
 
   .promo-banner h3 {
+    font-family: "Schibsted Grotesk", sans-serif !important;
+    font-weight: 900;
     font-size: 28px;
   }
 

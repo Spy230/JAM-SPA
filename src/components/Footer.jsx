@@ -43,7 +43,10 @@ const Footer = () => {
           </div>
         </div>
         <div style={{ borderTop: '1px solid rgba(255, 255, 255, 0.2)', paddingTop: '30px', textAlign: 'center' }}>
-          <p style={{ fontSize: '14px', color: '#999' }}>© 2026 JAM — Массаж в Москве. Все права защищены.</p>
+          <p style={{ fontSize: '14px', color: '#999', marginBottom: '15px' }}>© 2026 JAM — Массаж в Москве. Все права защищены.</p>
+          <p style={{ fontSize: '16px', color: '#999', lineHeight: '1.6', fontWeight: '600' }}>
+            Интимных услуг не предоставляем (+18)
+          </p>
         </div>
       </div>
     </footer>

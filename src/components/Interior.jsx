@@ -67,7 +67,7 @@ const Interior = () => {
         {/* Carousel */}
         <div className="interior-carousel">
           <button className="carousel-btn carousel-prev" onClick={prevSlide}>
-            ‹
+            ←
           </button>
           <div className="carousel-container">
             <div className="carousel-track" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
@@ -79,7 +79,7 @@ const Interior = () => {
             </div>
           </div>
           <button className="carousel-btn carousel-next" onClick={nextSlide}>
-            ›
+            →
           </button>
           <div className="carousel-indicators">
             {interiorImages.map((_, index) => (

@@ -12,12 +12,9 @@ import Footer from './components/Footer'
 import './App.css'
 
 function App() {
-  const [ageVerified, setAgeVerified] = useState(
-    localStorage.getItem('ageVerified') === 'true'
-  )
+  const [ageVerified, setAgeVerified] = useState(false)
 
   const handleAgeVerify = () => {
-    localStorage.setItem('ageVerified', 'true')
     setAgeVerified(true)
   }
 
