@@ -50,16 +50,22 @@
 }
 
 .promo-banner h3 {
+    font-family: "Schibsted Grotesk", sans-serif;
+    font-optical-sizing: auto;
     font-size: 36px;
-    font-weight: bold;
+    font-weight: 700;
+    font-style: normal;
     color: white;
     margin-bottom: 15px;
 }
 
 .promo-banner p {
+    font-family: "Schibsted Grotesk", sans-serif;
+    font-optical-sizing: auto;
     font-size: 20px;
-    color: #00D4FF;
     font-weight: 600;
+    font-style: normal;
+    color: #00D4FF;
 }
 
 /* Раздел Наши Мастера */
