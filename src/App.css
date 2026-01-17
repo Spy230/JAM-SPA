@@ -188,6 +188,7 @@ header {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
+  position: relative;
 }
 
 .logo-section {
@@ -1041,6 +1042,29 @@ footer {
 
   .masters-grid {
     grid-template-columns: 1fr;
+  }
+
+  /* Footer mobile styles */
+  footer {
+    padding: 30px 15px 20px;
+  }
+
+  footer > div > div:first-child {
+    grid-template-columns: 1fr !important;
+    gap: 25px !important;
+  }
+
+  footer h3 {
+    font-size: 20px !important;
+  }
+
+  footer h4 {
+    font-size: 16px !important;
+  }
+
+  footer p,
+  footer a {
+    font-size: 14px !important;
   }
 
   /* About Section Mobile */
@@ -2148,22 +2172,19 @@ footer {
 
 /* Мобильное выпадающее меню */
 .mobile-menu-dropdown {
-  position: fixed;
-  top: 0;
+  position: absolute;
+  top: 100%;
   left: 0;
   right: 0;
   background: rgba(0, 0, 0, 0.98);
   backdrop-filter: blur(20px);
   border-bottom: 2px solid #00D4FF;
-  transform: translateY(-100%);
-  transition: transform 0.4s ease;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.3s ease;
+  opacity: 0;
   z-index: 999;
-  padding-top: 120px;
   box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
-}
-
-.mobile-menu-dropdown.open {
-  transform: translateY(0);
 }
 
 .mobile-navigation {
@@ -2288,10 +2309,6 @@ footer {
   padding-bottom: 40px;
   border-bottom: 2px solid #00D4FF;
   box-shadow: 0 10px 40px rgba(0, 212, 255, 0.3);
-}
-
-.mobile-menu-dropdown.open {
-  transform: translateY(0);
 }
 
 .mobile-navigation {

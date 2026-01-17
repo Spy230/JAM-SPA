@@ -4,7 +4,7 @@ const Contacts = () => {
       <h2 style={{ fontSize: '48px', fontWeight: 'bold', textAlign: 'center', color: '#00D4FF', marginBottom: '50px' }}>
         Контакты
       </h2>
-      <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '40px' }}>
+      <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '40px' }}>
         <div>
           <div style={{ background: 'rgba(0, 0, 0, 0.5)', borderRadius: '20px', padding: '30px', border: '2px solid rgba(0, 212, 255, 0.3)', marginBottom: '20px' }}>
             <h4 style={{ fontSize: '22px', color: '#00D4FF', marginBottom: '15px' }}>📍 Адрес</h4>

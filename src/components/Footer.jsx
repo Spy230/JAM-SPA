@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <footer>
       <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '40px', marginBottom: '40px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '40px', marginBottom: '40px' }}>
           <div style={{ background: 'rgba(0, 0, 0, 0.3)', padding: '30px', borderRadius: '15px', border: '2px solid rgba(255, 255, 255, 0.2)' }}>
             <h3 style={{ fontSize: '24px', color: '#ffffff', marginBottom: '20px' }}>JAM Массаж</h3>
             <p style={{ fontSize: '16px', color: '#00BFFF', lineHeight: '1.6', marginBottom: '20px' }}>
