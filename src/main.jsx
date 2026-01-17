@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App'
 import './index.css'
+import './mobile-menu.css'
 
 // Устанавливаем фоновое изображение принудительно
 const bgImage = '/static/DSC04113.jpg'

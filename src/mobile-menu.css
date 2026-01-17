@@ -1,0 +1,116 @@
+/* Гамбургер меню */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 25px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1002;
+}
+
+.hamburger span {
+  width: 100%;
+  height: 3px;
+  background: var(--accent-cyan);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 5px var(--accent-cyan);
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(8px, 8px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* Мобильное меню - скрыто по умолчанию на десктопе */
+.mobile-menu-dropdown {
+  display: none;
+}
+
+/* Мобильные стили */
+@media (max-width: 768px) {
+  /* Показываем кнопку гамбургера */
+  .hamburger {
+    display: flex !important;
+  }
+
+  /* Фиксируем header */
+  header {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1001;
+  }
+
+  /* Добавляем отступ для main чтобы контент не прятался под header */
+  main {
+    margin-top: 120px;
+  }
+
+  /* Мобильное меню */
+  .mobile-menu-dropdown {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.98);
+    z-index: 1000;
+    padding-top: 140px;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .mobile-menu-dropdown.open {
+    transform: translateX(0);
+  }
+
+  .mobile-navigation {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 20px;
+  }
+
+  .mobile-nav-item {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: 600;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  .mobile-nav-item:hover,
+  .mobile-nav-item:active {
+    color: var(--accent-cyan);
+    background: rgba(0, 212, 255, 0.1);
+  }
+
+  /* Скрываем десктопную навигацию */
+  .desktop-nav {
+    display: none !important;
+  }
+}

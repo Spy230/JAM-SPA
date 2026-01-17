@@ -1,7 +1,21 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false)
+
+  // Блокируем прокрутку body при открытом меню
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'unset'
+    }
+    
+    // Очистка при размонтировании
+    return () => {
+      document.body.style.overflow = 'unset'
+    }
+  }, [menuOpen])
 
   const scrollToSection = (id) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
