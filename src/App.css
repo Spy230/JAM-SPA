@@ -111,6 +111,7 @@ body {
   min-height: 100vh;
   width: 100%;
   overflow-x: hidden;
+  position: relative;
 }
 
 @keyframes neonPulse {
@@ -142,11 +143,25 @@ body {
 html {
   overflow-x: hidden;
   width: 100%;
+  position: relative;
 }
 
 #root {
   width: 100%;
   overflow-x: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  flex: 1;
+  position: relative;
 }
 
 /* Применяем Schibsted Grotesk к основному контенту */
@@ -197,6 +212,8 @@ header {
   width: 100%;
   left: 0;
   right: 0;
+  margin: 0;
+  padding: 0;
 }
 
 .header-content {
@@ -346,6 +363,9 @@ footer {
   margin-top: 80px;
   width: 100%;
   box-sizing: border-box;
+  position: relative;
+  left: 0;
+  right: 0;
 }
 
 /* Промо-акция с анимацией */
@@ -1032,18 +1052,53 @@ footer {
 
 @media (max-width: 768px) {
 
+  html,
+  body {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+    margin: 0;
+    padding: 0;
+  }
+
+  #root {
+    width: 100%;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  main {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  section {
+    padding: 0 15px;
+    margin: 40px 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
   /* Header mobile fix */
   header {
+    position: -webkit-sticky;
     position: sticky;
     top: 0;
     width: 100%;
     margin: 0;
     padding: 0;
+    left: 0;
+    right: 0;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
   }
 
   .header-content {
     padding: 15px;
     width: 100%;
+    box-sizing: border-box;
   }
 
   .logo-section {
@@ -1101,12 +1156,19 @@ footer {
     padding: 30px 15px 20px;
     width: 100%;
     margin: 0;
+    margin-top: 40px;
     box-sizing: border-box;
+    position: relative;
+    left: 0;
+    right: 0;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
   }
 
   footer>div {
     width: 100%;
     padding: 0;
+    box-sizing: border-box;
   }
 
   footer>div>div:first-child {
@@ -2451,7 +2513,9 @@ footer {
   .mobile-menu-dropdown {
     display: none;
   }
-}/* JAM Theme - Cyberpunk Neon Style */
+}
+
+/* JAM Theme - Cyberpunk Neon Style */
 
 /* Font Classes */
 .dancing-script-regular {
@@ -3502,7 +3566,7 @@ footer {
     padding: 30px 15px 20px;
   }
 
-  footer > div > div:first-child {
+  footer>div>div:first-child {
     grid-template-columns: 1fr !important;
     gap: 25px !important;
   }
@@ -4843,5 +4907,35 @@ footer {
 @media (min-width: 769px) {
   .mobile-menu-dropdown {
     display: none;
+  }
+}
+
+/* Mobile Layout Fixes */
+@media (max-width: 768px) {
+  * {
+    max-width: 100vw;
+  }
+
+  body,
+  html,
+  #root,
+  main {
+    overflow-x: hidden !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+  }
+
+  header,
+  footer,
+  section {
+    max-width: 100vw !important;
+    box-sizing: border-box !important;
+  }
+
+  .header-content,
+  .footer-content {
+    max-width: 100% !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
   }
 }
